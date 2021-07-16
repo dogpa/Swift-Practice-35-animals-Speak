@@ -1,24 +1,209 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Swift_Practice___35_animals_Speak" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flower" translatesAutoresizingMaskIntoConstraints="NO" id="CUV-5q-xo4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="你的勇氣我給你 請輸入告白語言" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47c-Os-Vaa">
+                                <rect key="frame" x="77" y="74" width="260" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2aP-JY-vRl">
+                                <rect key="frame" x="43" y="111" width="328" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="-15" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="1bI-jT-Piq">
+                                <rect key="frame" x="43" y="168" width="166" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="speakTypeChangeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="iYB-Dc-vMF"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gxw-rs-UBY">
+                                <rect key="frame" x="43" y="213" width="166" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="speakSpeedChangeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="hzV-qa-n6U"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="854-6X-R20">
+                                <rect key="frame" x="296" y="167" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="play.rectangle" catalog="system"/>
+                                <connections>
+                                    <action selector="startToSpeakButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cI1-i9-6JB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="語調" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qi2-JX-QbZ">
+                                <rect key="frame" x="226" y="172" width="62" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="速度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZV-bc-02R">
+                                <rect key="frame" x="226" y="217" width="62" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAs-uc-fw1">
+                                <rect key="frame" x="37" y="460" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <state key="normal" title="🐕"/>
+                                <connections>
+                                    <action selector="aniamalsSpeak:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tqB-uA-Ywj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOv-bx-Zoc">
+                                <rect key="frame" x="157" y="460" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <state key="normal" title="🐈"/>
+                                <connections>
+                                    <action selector="aniamalsSpeak:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dv8-bL-0er"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQF-qy-4QX">
+                                <rect key="frame" x="277" y="460" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <state key="normal" title="🐷"/>
+                                <connections>
+                                    <action selector="aniamalsSpeak:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s3U-wY-ZJX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAL-ev-vop">
+                                <rect key="frame" x="37" y="580" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <state key="normal" title="🐵"/>
+                                <connections>
+                                    <action selector="aniamalsSpeak:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fvr-hD-etE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szX-ZP-8or">
+                                <rect key="frame" x="157" y="580" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <state key="normal" title="🦁"/>
+                                <connections>
+                                    <action selector="aniamalsSpeak:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DDn-oa-UBt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZX-bk-gpo">
+                                <rect key="frame" x="277" y="580" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <state key="normal" title="🐻"/>
+                                <connections>
+                                    <action selector="aniamalsSpeak:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GwP-JY-WUc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6F-J3-mB3">
+                                <rect key="frame" x="37" y="700" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <state key="normal" title="🐸"/>
+                                <connections>
+                                    <action selector="aniamalsSpeak:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fg6-0O-lAK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vip-lp-ugu">
+                                <rect key="frame" x="157" y="700" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <state key="normal" title="🦆"/>
+                                <connections>
+                                    <action selector="aniamalsSpeak:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wht-2V-xYZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWw-Gu-Bby">
+                                <rect key="frame" x="277" y="700" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <state key="normal" title="🐔"/>
+                                <connections>
+                                    <action selector="aniamalsSpeak:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e3T-NV-jw6"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dt0-Ic-Zwf">
+                                <rect key="frame" x="157" y="400" width="220" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94201701879501343" green="0.92419397830963135" blue="0.75277972221374512" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <segments>
+                                    <segment title="中文"/>
+                                    <segment title="英文"/>
+                                    <segment title="叫聲"/>
+                                </segments>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="認識動物發音" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FS3-8I-rEV">
+                                <rect key="frame" x="45" y="298" width="222" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DFKaiShu-SB-Estd-BF" family="BiauKai" pointSize="35"/>
+                                <color key="textColor" red="0.23062258958816528" green="0.092740915715694427" blue="0.63419061899185181" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <connections>
+                        <outlet property="bearButton" destination="TZX-bk-gpo" id="fdq-aU-AHe"/>
+                        <outlet property="catButton" destination="BOv-bx-Zoc" id="ERV-LH-Yom"/>
+                        <outlet property="chickenButton" destination="TWw-Gu-Bby" id="6rI-gL-XFn"/>
+                        <outlet property="dogButton" destination="UAs-uc-fw1" id="luA-xm-TaH"/>
+                        <outlet property="duckButton" destination="vip-lp-ugu" id="hlc-fV-oWE"/>
+                        <outlet property="forgButton" destination="w6F-J3-mB3" id="eUq-SK-8Bl"/>
+                        <outlet property="languageChangeSegmentedController" destination="dt0-Ic-Zwf" id="FAM-Tt-20j"/>
+                        <outlet property="lionButton" destination="szX-ZP-8or" id="NcW-tn-ODk"/>
+                        <outlet property="monkeyButton" destination="GAL-ev-vop" id="vif-7T-nXW"/>
+                        <outlet property="pigButton" destination="UQF-qy-4QX" id="GQD-2n-C1f"/>
+                        <outlet property="speakSpeedLabel" destination="0ZV-bc-02R" id="FDY-aO-6dt"/>
+                        <outlet property="speakSpeedSliderOutlet" destination="gxw-rs-UBY" id="7wE-Mn-cyB"/>
+                        <outlet property="speakTypeLabel" destination="qi2-JX-QbZ" id="yVS-OF-S8N"/>
+                        <outlet property="speakTypeSliderOutlet" destination="1bI-jT-Piq" id="c3h-Z2-izV"/>
+                        <outlet property="speakWordTextField" destination="2aP-JY-vRl" id="ous-9E-OIY"/>
+                        <outlet property="startSpeakButtonOutlet" destination="854-6X-R20" id="o40-or-G2R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="428.98550724637687" y="-169.41964285714286"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="flower" width="256" height="460"/>
+        <image name="play.rectangle" catalog="system" width="128" height="93"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
